@@ -1603,7 +1603,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
-  /**
+  /*
    * PORTFOLIO
    */
 
@@ -1890,8 +1890,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 
-
-
 iframe {
   width: 100%;
   height: 600px;
@@ -1915,41 +1913,30 @@ iframe {
 }
 
 
+/* New skill */
+
+/* Skills Section */
+
 .service-list-skills {
   display: grid;
-  grid-template-columns: 2fr;
-  columns: 5;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
   margin-bottom: 20px;
-  
 }
-
-.service-list-skills {
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 20px 25px;
-}
-
-
-.service-icon-box-skills { margin-bottom: 10px; }
-
-.service-icon-box-skills img { margin: auto; }
-
-.service-icon-box-skills {
-  margin-bottom: 0;
-  margin-top: 5px;
-}
-
 
 .service-item-skills {
   position: relative;
-  width: 150px;
+  width: 100%;
   background: var(--border-gradient-onyx);
-  padding: 10x;
+  padding: 20px;
   border-radius: 15px;
   box-shadow: var(--shadow-2);
   z-index: 1;
   text-align: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .service-item-skills::before {
@@ -1961,15 +1948,14 @@ iframe {
   z-index: -1;
 }
 
-.service-item-skills {
-  display: flexbox;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-  padding: 20px;
+.service-icon-box-skills {
+  margin: 10px 0;
 }
 
-.service-item-title-skills { margin-bottom: 7px; }
+.service-icon-box-skills img {
+  display: block;
+  margin: auto;
+}
 
 .service-item-text-skills {
   color: var(--light-gray);
@@ -1978,3 +1964,34 @@ iframe {
   line-height: 1.6;
   text-align: center;
 }
+
+/* Responsive Adjustments */
+
+@media (max-width: 768px) {
+  .service-list-skills {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .service-item-skills {
+    padding: 15px;
+  }
+
+  .service-item-text-skills {
+    font-size: var(--fs-5);
+  }
+}
+
+@media (max-width: 480px) {
+  .service-list-skills {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .service-item-skills {
+    padding: 10px;
+  }
+
+  .service-item-text-skills {
+    font-size: var(--fs-4);
+  }
+}
+
